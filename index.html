@@ -207,7 +207,7 @@
 
   /* stats */
   .stats{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
     border-top:1px solid var(--rule);margin-top:clamp(2.5rem,6vw,4.5rem);
     opacity:0;transform:translateY(16px);transition:opacity 1s ease .85s, transform 1s var(--ease) .85s;
   }
@@ -251,7 +251,7 @@
 
   /* practice areas */
   #practice{background:var(--paper-2);}
-  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+  .areas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);}
   .area{background:var(--paper-2);padding:clamp(1.6rem,2.6vw,2.4rem);transition:background .35s ease;}
   .area:hover{background:var(--paper);}
   .area .k{font-family:var(--util);font-size:.64rem;font-weight:700;letter-spacing:.18em;color:var(--gold);}
@@ -262,14 +262,19 @@
   .area li::before{content:"";position:absolute;left:0;top:1.05rem;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg);}
 
   /* sector focus (dark) */
-  #sectors{background:var(--ink-deep);color:var(--paper);position:relative;overflow:hidden;}
+  #sectors{
+    background:
+      linear-gradient(to bottom, rgba(14,26,48,.9), rgba(10,20,38,.95)),
+      url('assets/img/ChatGPT%20Image%20Jun%2021,%202026,%2011_55_18%20AM.png') center/cover no-repeat var(--ink-deep);
+    color:var(--paper);position:relative;overflow:hidden;
+  }
   #sectors .eyebrow{color:var(--gold-bright);}
   #sectors .eyebrow::before{background:var(--gold-bright);}
   #sectors h2{color:var(--paper);}
   .sector-amp{position:absolute;left:-4%;bottom:-22%;font-family:var(--display);font-size:min(60vw,640px);line-height:.7;color:#fff;opacity:.035;pointer-events:none;}
   .sector-top{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(1.6rem,5vw,5rem);align-items:end;position:relative;z-index:1;}
   .sector-top p{color:var(--muted-light);margin:0;}
-  .sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);margin-top:clamp(2.2rem,5vw,4rem);position:relative;z-index:1;}
+  .sector-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);margin-top:clamp(2.2rem,5vw,4rem);position:relative;z-index:1;}
   .cap{background:var(--ink-deep);padding:clamp(1.5rem,2.4vw,2.2rem);transition:background .35s ease;}
   .cap:hover{background:var(--ink-deeper);}
   .cap .ri{font-family:var(--display);font-style:italic;color:var(--gold-bright);font-size:1.15rem;}
@@ -278,7 +283,7 @@
   .sector-note{position:relative;z-index:1;margin-top:clamp(2rem,4vw,3rem);max-width:70ch;color:var(--muted-light);font-style:italic;font-family:var(--display);font-size:clamp(1.1rem,1.6vw,1.25rem);line-height:1.5;}
 
   /* people */
-  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.6rem,3.5vw,3.2rem);}
+  .people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.6rem,3.5vw,3.2rem);}
   .person .frame{position:relative;overflow:hidden;background:var(--ink);}
   .person .frame::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);pointer-events:none;}
   .person img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.12);transition:transform .9s var(--ease), filter .9s ease;}
@@ -289,10 +294,19 @@
   .person p{font-size:.95rem;color:var(--muted);margin:0;line-height:1.62;}
   .person .pl{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;font-family:var(--util);font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:3px;transition:color .25s,gap .25s;}
   .person .pl:hover{color:var(--gold);gap:.8rem;}
+  /* monogram portrait tile (no photo needed) */
+  .person .frame.mono{aspect-ratio:4/5;display:grid;place-items:center;
+    background:radial-gradient(130% 130% at 30% 18%, #17273f 0%, var(--ink-deeper) 70%);}
+  .person .frame.mono span{font-family:var(--display);font-weight:600;
+    font-size:clamp(2.8rem,6vw,4.4rem);color:var(--gold-bright);letter-spacing:.06em;line-height:1;
+    transition:transform .6s var(--ease);}
+  .person:hover .frame.mono span{transform:scale(1.06);}
+  .person .frame.mono::before{content:"&";position:absolute;right:-2%;bottom:-14%;
+    font-family:var(--display);font-style:italic;font-size:11rem;line-height:1;color:#fff;opacity:.045;pointer-events:none;}
 
   /* clients */
   #clients{background:var(--paper-2);}
-  .clients{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+  .clients{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);}
   .client{background:var(--paper-2);padding:1.4rem 1.5rem;transition:background .3s ease;}
   .client:hover{background:var(--paper);}
   .client .cn{font-family:var(--display);font-size:clamp(1.15rem,1.8vw,1.32rem);font-weight:500;line-height:1.15;}
@@ -324,7 +338,8 @@
     content:"";position:absolute;inset:0;
     background:linear-gradient(to bottom, rgba(10,20,38,.35), rgba(10,20,38,0) 30%, rgba(10,20,38,0) 70%, rgba(10,20,38,.45));
   }
-  .band-court{background-image:url('assets/img/ChatGPT%20Image%20Jun%2020,%202026,%2011_09_16%20PM.png');}
+  .band-court{background-image:url('assets/img/ChatGPT%20Image%20Jun%2021,%202026,%2011_49_37%20AM.png');}
+  .band-promise{background-image:url('assets/img/ChatGPT%20Image%20Jun%2021,%202026,%2011_49_32%20AM.png');}
   .band .band-inner{position:relative;z-index:1;}
   .band .eyebrow{color:var(--gold-bright);}
   .band .eyebrow::before{background:var(--gold-bright);}
@@ -343,7 +358,7 @@
   footer{
     background:
       linear-gradient(to bottom, rgba(14,26,48,.84), rgba(10,20,38,.93)),
-      url('assets/img/ChatGPT%20Image%20Jun%2020,%202026,%2011_11_24%20PM.png') center/cover no-repeat var(--ink-deep);
+      url('assets/img/ChatGPT%20Image%20Jun%2021,%202026,%2011_53_28%20AM.png') center/cover no-repeat var(--ink-deep);
     color:var(--paper);position:relative;overflow:hidden;padding-block:clamp(4.5rem,9vw,7.5rem) 2.5rem;
   }
   .foot-amp{position:absolute;right:-3%;top:-30%;font-family:var(--display);font-size:min(56vw,560px);line-height:.7;color:#fff;opacity:.04;pointer-events:none;}
@@ -373,8 +388,8 @@
   /* ---------- responsive ---------- */
   @media (max-width:980px){
     .firm-grid,.sector-top,.pb-grid,.foot-top{grid-template-columns:1fr;}
-    .areas,.sector-grid,.clients{grid-template-columns:repeat(2,1fr);}
-    .people{grid-template-columns:repeat(2,1fr);}
+    .areas,.sector-grid,.clients{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .people{grid-template-columns:repeat(2,minmax(0,1fr));}
     .firm-grid .statement{font-size:clamp(1.5rem,4vw,2rem);}
   }
   @media (max-width:760px){
@@ -669,6 +684,15 @@
   </div>
 </section>
 
+<!-- ============ CINEMATIC BAND 2 ============ -->
+<section class="band band-promise" aria-label="Our standard of preparation">
+  <div class="band-inner wrap reveal">
+    <span class="eyebrow">Our Promise</span>
+    <p class="band-line">Prepared as though everything <span class="em">turns on it.</span></p>
+    <p class="band-sub">Because for the client, it usually does — the same diligence and the same candour on every brief we accept.</p>
+  </div>
+</section>
+
 <!-- ============ THE PEOPLE ============ -->
 <section id="people">
   <div class="wrap">
@@ -678,7 +702,7 @@
     </div>
     <div class="people">
       <article class="person reveal">
-        <div class="frame"><img src="assets/img/IMG_3123.jpg" alt="Muneer Ahmed, Advocate of the High Court and Principal of Muneer and Associates" width="620" height="775" loading="lazy"></div>
+        <div class="frame mono"><span>MA</span></div>
         <div class="role">Advocate, High Court · Principal</div>
         <h3>Muneer Ahmed</h3>
         <div class="creds">Member, Sindh High Court Bar Association &amp; Karachi Bar Association</div>
@@ -686,7 +710,7 @@
       </article>
 
       <article class="person reveal">
-        <div class="frame"><img src="assets/img/F8CF97F0-291C-4468-89F4-82D23765F3C7.PNG" alt="Amna Usmani, Senior Associate at Muneer and Associates" width="620" height="775" loading="lazy"></div>
+        <div class="frame mono"><span>AU</span></div>
         <div class="role">Senior Associate</div>
         <h3>Amna Usmani</h3>
         <div class="creds">LLB (Hons), London · LLM, International Commercial Law, London</div>
@@ -694,7 +718,7 @@
       </article>
 
       <article class="person reveal">
-        <div class="frame"><img src="assets/img/IMG_3124.jpg" alt="Noman Sohail, Advocate and Legal Consultant at Muneer and Associates" width="620" height="775" loading="lazy"></div>
+        <div class="frame mono"><span>NS</span></div>
         <div class="role">Advocate · Legal Consultant</div>
         <h3>Noman Sohail</h3>
         <div class="creds">LLB (Hons), London · LLM, Edinburgh · CAMS</div>
