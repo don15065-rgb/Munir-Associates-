@@ -283,7 +283,7 @@
   .sector-note{position:relative;z-index:1;margin-top:clamp(2rem,4vw,3rem);max-width:70ch;color:var(--muted-light);font-style:italic;font-family:var(--display);font-size:clamp(1.1rem,1.6vw,1.25rem);line-height:1.5;}
 
   /* people */
-  .people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.6rem,3.5vw,3.2rem);}
+  .people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.6rem,3.5vw,3.2rem);max-width:900px;}
   .person .frame{position:relative;overflow:hidden;background:var(--ink);}
   .person .frame::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);pointer-events:none;}
   .person img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.12);transition:transform .9s var(--ease), filter .9s ease;}
@@ -409,6 +409,7 @@
     .stat{border-right:0;border-bottom:1px solid var(--rule);padding:1.4rem 0;}
     .stat:last-child{border-bottom:0;}
     .principles,.areas,.sector-grid,.clients,.people{grid-template-columns:1fr;}
+    .people{max-width:420px;}
     .brand .sub{display:none;}
     .foot-bottom{flex-direction:column;align-items:flex-start;}
     .hero h1{max-width:18ch;}
@@ -707,14 +708,6 @@
         <h3>Muneer Ahmed</h3>
         <div class="creds">Member, Sindh High Court Bar Association &amp; Karachi Bar Association</div>
         <p>Muneer Ahmed leads the practice. In more than sixteen years at the bar he has built a litigation practice that runs from the customs and banking courts to the High Court, and an advisory practice that regulated businesses return to for the unglamorous work that keeps them out of trouble. He began in customs law and customs trials before several years as a senior associate on civil and corporate matters: the drafting and registration of deeds, notices, opinions and agreements. He appears regularly before the High Courts, the civil and criminal courts, rent controllers, banking courts, the National Accountability Bureau and the tribunals that sit alongside them, and also acts as arbitrator and mediator. On the banking side he sits on the panels of several banks and advises on the full range of secured lending.</p>
-      </article>
-
-      <article class="person reveal">
-        <div class="frame mono"><span>AU</span></div>
-        <div class="role">Senior Associate</div>
-        <h3>Amna Usmani</h3>
-        <div class="creds">LLB (Hons), London · LLM, International Commercial Law, London</div>
-        <p>Amna Usmani read law in London, taking her LLB (Hons) and an LLM in International Commercial Law. She began in intellectual property at Bharucha &amp; Co, spending four years on trademark, copyright and patent matters and the contracts that surround them. She moved into civil litigation in 2014 and spent four years at Masood &amp; Associates, rising from junior to senior associate, carrying the substance of contentious work: research, the drafting of agreements, plaints, written statements, affidavits and opinions, and the conduct of cases and arbitrations on complex contractual issues, including FIDIC construction contracts. She continues to serve as Director Legal at Usmani International Associates. She is at her most valuable where the document and the dispute are the same problem seen from two ends.</p>
       </article>
 
       <article class="person reveal">
