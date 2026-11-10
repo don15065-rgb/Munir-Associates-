@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://don15065-rgb.github.io/Munir-Associates-/sitemap.xml

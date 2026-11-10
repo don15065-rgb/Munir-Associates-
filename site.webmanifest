@@ -1,0 +1,15 @@
+{
+  "name": "Muneer & Associates",
+  "short_name": "Muneer & Associates",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f3ed",
+  "theme_color": "#102320",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
