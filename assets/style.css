@@ -80,3 +80,12 @@
 @media(max-width:990px){.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-metric{min-height:167px}.hero h1{font-size:clamp(48px,5.7vw,67px)}}
 @media(max-width:700px){.hero h1{font-size:clamp(46px,9vw,62px);line-height:1.13}.hero-credential{font-size:20px;margin-bottom:13px}.proof-section{padding:72px 0}.proof-heading{display:block;margin-bottom:29px}.proof-heading h2{font-size:clamp(43px,9vw,55px)}.proof-heading>p{font-size:13px;margin-top:20px}.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-metric{padding:27px 16px;min-height:157px}.proof-value{font-size:clamp(42px,9vw,61px)}.proof-metric p{font-size:11px;line-height:1.7;margin-top:16px}.proof-footnote{font-size:10px;margin-top:20px}}
 @media(max-width:370px){.proof-value{font-size:39px}.proof-metric{padding:22px 10px}}
+
+
+/* Six priority areas and a clear pathway to other specialties. */
+.expertise-section .service-card-other{grid-column:1 / -1;min-height:220px;background:#edf0e9;border-left:3px solid #bca06f}
+.expertise-section .service-card-other h3{margin:20px 0 12px}
+.expertise-section .service-card-other p{max-width:680px;margin-bottom:18px}
+.other-practices-section{background:#f7f5f0;scroll-margin-top:100px}
+.other-practices-section .service-card{min-height:270px}
+@media(max-width:700px){.expertise-section .service-card-other{min-height:230px}.other-practices-section{scroll-margin-top:73px}}
