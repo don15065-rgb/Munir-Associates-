@@ -17,6 +17,33 @@
   }
   if (header) window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 10), { passive: true });
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+
+  // On-scroll numbers; keep the actual figures in the HTML for non-JS and reduced-motion users.
+  const numbers = document.querySelectorAll('.proof-number[data-count-to]');
+  if (numbers.length && 'IntersectionObserver' in window &&
+      !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    const numberObserver = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const node = entry.target;
+        const total = Number(node.getAttribute('data-count-to'));
+        observer.unobserve(node);
+        if (!Number.isFinite(total) || total < 0) continue;
+        node.textContent = '0';
+        let started = null;
+        const tick = now => {
+          if (started === null) started = now;
+          const t = Math.min(1, (now - started) / 1550);
+          const eased = 1 - Math.pow(1 - t, 3);
+          node.textContent = Math.round(total * eased).toLocaleString('en-US');
+          if (t < 1) requestAnimationFrame(tick);
+          else node.textContent = total.toLocaleString('en-US');
+        };
+        requestAnimationFrame(tick);
+      }
+    }, {threshold:0.25, rootMargin:'0px 0px -6% 0px'});
+    numbers.forEach(node => numberObserver.observe(node));
+  }
   const form = document.getElementById('enquiry-form');
   if (!form) return;
   const emailBtn = form.querySelector('[type="submit"]');

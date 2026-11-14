@@ -58,3 +58,25 @@
 .chamber-visual figcaption{position:absolute;z-index:2;bottom:21px;left:24px;color:#ead9b6;font-size:9px;letter-spacing:.18em;font-weight:700;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 @media(max-width:990px) and (min-width:701px){.hero-art.chamber-visual{height:400px}}
 @media(max-width:700px){.hero-art.chamber-visual{display:block;width:100%;max-width:none;height:238px;justify-self:stretch;margin:0 0 40px;box-shadow:12px 12px 0 rgba(4,17,13,.22)}.chamber-visual img{object-position:63% center}.chamber-visual figcaption{font-size:8px;bottom:15px;left:16px}.hero-content{padding-bottom:36px}}
+
+
+/* Firm-forward headline and an understated, animated proof-of-experience panel. */
+.hero h1{font-size:clamp(49px,5.15vw,78px);max-width:780px;line-height:1.13;margin-bottom:24px}
+.hero-credential{font-family:var(--serif);font-size:clamp(20px,1.95vw,27px);line-height:1.55;color:#f1e4c9;max-width:555px;margin:0 0 14px}
+.hero-lede{margin-bottom:38px}
+.proof-section{padding:105px 0 95px;background:#f0ede6;border-bottom:1px solid #dedbd1}
+.proof-heading{display:flex;align-items:end;justify-content:space-between;gap:55px;margin-bottom:48px}
+.proof-heading .eyebrow{margin-bottom:21px}
+.proof-heading h2{font:400 clamp(43px,4.4vw,66px)/1.13 var(--serif);letter-spacing:-.04em;margin:0;color:var(--forest)}
+.proof-heading h2 em{color:#a47c49}
+.proof-heading>p{max-width:400px;color:#67736b;font-size:14px;line-height:1.95;margin:0 0 5px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #d4d0c7;border-left:1px solid #d4d0c7}
+.proof-metric{padding:38px 26px 34px;min-width:0;min-height:196px;background:#f8f6f0;border-right:1px solid #d4d0c7;border-bottom:1px solid #d4d0c7}
+.proof-value{display:flex;align-items:baseline;font:400 clamp(49px,5vw,72px)/1 var(--serif);color:#193e33;letter-spacing:-.065em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.proof-number{display:inline-block}
+.proof-suffix{font-size:.62em;letter-spacing:-.04em;color:#ad8653;margin-left:2px}
+.proof-metric p{font-size:12px;line-height:1.85;color:#667369;margin:24px 0 0}
+.proof-footnote{font-size:11px;line-height:1.8;color:#68726c;max-width:830px;margin:24px 0 0}
+@media(max-width:990px){.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-metric{min-height:167px}.hero h1{font-size:clamp(48px,5.7vw,67px)}}
+@media(max-width:700px){.hero h1{font-size:clamp(46px,9vw,62px);line-height:1.13}.hero-credential{font-size:20px;margin-bottom:13px}.proof-section{padding:72px 0}.proof-heading{display:block;margin-bottom:29px}.proof-heading h2{font-size:clamp(43px,9vw,55px)}.proof-heading>p{font-size:13px;margin-top:20px}.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-metric{padding:27px 16px;min-height:157px}.proof-value{font-size:clamp(42px,9vw,61px)}.proof-metric p{font-size:11px;line-height:1.7;margin-top:16px}.proof-footnote{font-size:10px;margin-top:20px}}
+@media(max-width:370px){.proof-value{font-size:39px}.proof-metric{padding:22px 10px}}
